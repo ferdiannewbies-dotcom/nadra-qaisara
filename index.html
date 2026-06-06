@@ -11,13 +11,19 @@
 </head>
 <body>
    <div id="opening-overlay" class="opening-overlay" aria-hidden="true">
-      <div class="opening-card">
+      <div class="opening-card interactive-entry">
          <p>For istri kesayanganku</p>
          <h2>Nadra Qaisara</h2>
-         <span>💖</span>
+         <span class="entry-icon">💖</span>
+         <p class="entry-hint">hii monyetku</p>
+         <button id="enter-btn" class="enter-btn" type="button">Masuk ke cerita</button>
       </div>
    </div>
    <div id="heart-burst" aria-hidden="true"></div>
+   <div class="cute-character-zone" aria-hidden="true">
+      <div class="cute-char char-moyoco">Nadra ✨</div>
+      <div class="cute-char char-anno">Qaisara 💖</div>
+   </div>
    <div class="floating-heart">❤️</div>
    <div class="floating-heart">❤️</div>
    <div class="floating-heart">❤️</div>
@@ -27,29 +33,29 @@
    <header class="intro-card">
       <p class="eyebrow">Untuk hati yang paling istimewa</p>
       <h1>My Love, My Forever</h1>
-      <p>Di setiap detik, kamu adalah alasan untuk tersenyum, berbahagia, dan percaya bahwa cinta bisa terasa begitu indah.</p>
+      <p>Di setiap detik, kamu adalah alasan untuk tersenyum, berbahagia, dan percaya bahwa cinta bisa terasa begitu indah. Hari-hariku lebih ringan, lebih hangat, dan lebih berarti karena kamu ada di dalamnya.</p>
    </header>
 
    <div class="hero-note">
-      <h2>📜 Catatan Cinta</h2>
-      <p>Setiap hari bersamamu terasa seperti lagu terindah. Kamu membuat rumah ini penuh tawa, hangat, dan cinta yang tak pernah pudar.</p>
+      <h2>📜 Love Note</h2>
+      <p>Sayang, aku tidak pernah cukup baik dalam kata-kata, tapi satu hal yang selalu aku tahu: kamu adalah tempat paling aman dan paling indah dalam hidupku. Terima kasih sudah menjadi bagian dari cerita yang paling aku sayangi. Aku mencintaimu bukan hanya karena kamu ada di sisiku, tapi karena kamu membuatku merasa hidup.</p>
       <div class="heart-row">❤️  ❤️  ❤️</div>
    </div>
 
    <div class="story-section">
-      <h2>❤️ Cerita Kita</h2>
+      <h2>❤️ Our Story</h2>
       <div class="story-grid">
          <div class="story-card">
             <h3>Pertemuan Pertama</h3>
-            <p>Di hari itu hatiku langsung tahu: inilah awal kisah yang indah.</p>
+            <p>Di hari itu, aku sadar ada sesuatu yang berbeda. Senyummu membuat dunia terasa lebih hangat, dan hatiku memilih untuk tetap menatapmu.</p>
          </div>
          <div class="story-card">
             <h3>Momen Spesial</h3>
-            <p>Setiap kebersamaan sederhana selalu terasa seperti momen teristimewa.</p>
+            <p>Setiap waktu bersama kamu terasa seperti cerita kecil yang penuh cinta: tawa, pelukan, dan momen yang membuatku ingin mengingat semuanya.</p>
          </div>
          <div class="story-card">
             <h3>Janji Cinta</h3>
-            <p>Aku berjanji akan selalu menjagamu, menghargaimu, dan mencintaimu tanpa henti.</p>
+            <p>Aku berjanji akan terus menjaga, menghargai, dan mencintaimu dengan sepenuh hati, di setiap hari yang masih kita miliki bersama.</p>
          </div>
       </div>
    </div>
@@ -63,21 +69,34 @@
       </div>
       
       <div id="msg1" class="hidden-message">
-         <p>✨ Aku mencintaimu karena senyummu, hatimu yang mulia, dan cinta kasihmu yang tulus.</p>
+         <p>✨ Aku mencintaimu karena senyummu, hatimu yang mulia, dan cinta kasihmu yang tulus. Kamu membuat hidup ini terasa lebih berarti setiap hari.</p>
       </div>
       <div id="msg2" class="hidden-message">
-         <p>🌟 Aku bermimpi membangun masa depan indah bersamamu, penuh dengan tawa, cinta, dan kebahagiaan.</p>
+         <p>🌟 Aku bermimpi membangun masa depan indah bersamamu: rumah yang hangat, hari-hari yang penuh tawa, dan cinta yang terus tumbuh.</p>
       </div>
       <div id="msg3" class="hidden-message">
-         <p>🙏 Terima kasih sudah memilihku, sudah bersama dalam suka dan duka, dan membuat hidupku lebih indah.</p>
+         <p>🙏 Terima kasih sudah memilihku, sudah menjadi rumah di hatiku, dan membuat hidupku lebih indah, lebih lembut, dan lebih penuh warna.</p>
       </div>
    </div>
+
+   <div class="interactive-section romance-section">
+      <h2>💌 Love Card</h2>
+      <p>Untuk kamu, yang selalu menjadi alasan aku percaya bahwa cinta itu nyata.</p>
+      <div class="button-group">
+         <button class="msg-btn romance-btn" onclick="toggleMessage(event, 'card1')">Buka kartu cinta</button>
+      </div>
+      <div id="card1" class="hidden-message">
+         <p>Dear my love,<br><br>Jika aku bisa memilih satu hal yang paling aku syukuri dalam hidup ini, itu adalah kamu. Kamu adalah senyum yang membuatku pulih, pelukan yang membuatku tenang, dan cinta yang membuatku merasa lengkap. Aku sayang kamu lebih dari kata-kata, dan aku ingin terus menulis kisah kita dengan penuh kebahagiaan.<br><br>Always yours,<br>Pasanganmu yang selalu mencintaimu.</p>
+      </div>
+   </div>
+
+
    
    <div class="message">
       <h2>Untuk istriku tercinta</h2>
       <div class="quotes">
-         <p>💕 Setiap hari bersamamu adalah hadiah sangat berharga.</p>
-         <p>💕 Cinta kita seperti bunga yang terus berkembang indah seiring waktu.</p>
+         <p>💕 Setiap hari bersamamu adalah hadiah yang paling berharga dalam hidupku.</p>
+         <p>💕 Cinta kita seperti bunga yang terus berkembang, semakin indah setiap hari.</p>
          <p>💕 Terima kasih telah menjadi istri terbaik, sahabat terbesar, dan mimpi terindahku.</p>
          <p>💕 Dalam setiap senyummu, aku menemukan alasan untuk tersenyum lebih lebar.</p>
          <p>💕 Kamu adalah alasan aku selalu pulang dengan hati yang tenang dan penuh cinta.</p>
@@ -128,8 +147,25 @@
          <p>❤️ Kamu adalah prioritasku , dan kebahagiaanmu adalah yang paling penting dalam hidupku.</p>
       </div>
    </div>   
-   <div class="gallery">
-      <img src="wife.jpg" alt="My wife photo 1" class="gallery-photo">
+   <div id="photo-preview-modal" class="photo-modal hidden" aria-hidden="true">
+      <div class="photo-modal-card">
+         <button id="close-photo-btn" class="close-photo-btn" type="button" aria-label="Tutup foto">×</button>
+         <img id="preview-photo" class="preview-photo" src="" alt="Preview cinta">
+         <div class="preview-controls">
+            <button id="prev-photo-btn" class="preview-nav-btn" type="button">◀ Sebelumnya</button>
+            <button id="next-photo-btn" class="preview-nav-btn" type="button">Berikutnya ▶</button>
+         </div>
+         <p id="preview-caption" class="preview-caption">Momen indah ini sedang menunggu untuk dibuka 💕</p>
+      </div>
+   </div>
+
+   <div class="gallery-toolbar">
+      <button id="shuffle-gallery-btn" class="shuffle-btn" type="button">🎲 Acak foto cinta</button>
+      <span class="gallery-counter">88 foto cinta siap dipilih</span>
+   </div>
+
+   <div class="gallery" id="gallery-love">
+      <img src="wife.jpg" alt="My wife photo 1" class="gallery-photo" data-index="1">
       <img src="wife2.jpg" alt="My wife photo 2" class="gallery-photo">
       <img src="wife3.jpg" alt="My wife photo 3" class="gallery-photo">
       <img src="wife4.jpg" alt="My wife photo 4" class="gallery-photo">
@@ -213,23 +249,38 @@
       <img src="wife82.jpg" alt="My wife photo 82" class="gallery-photo">
       <img src="wife83.jpg" alt="My wife photo 83" class="gallery-photo">
       <img src="wife84.jpg" alt="My wife photo 84" class="gallery-photo">
+      <img src="wife85.jpg" alt="My wife photo 85" class="gallery-photo">
+      <img src="wife86.jpg" alt="My wife photo 86" class="gallery-photo">
+      <img src="wife87.jpg" alt="My wife photo 87" class="gallery-photo">
+      <img src="wife88.jpg" alt="My wife photo 88" class="gallery-photo">
    </div>
    
    <script>
       window.addEventListener('load', () => {
          const overlay = document.getElementById('opening-overlay');
+         const enterBtn = document.getElementById('enter-btn');
          if (!overlay) return;
 
          overlay.classList.add('show');
          createHeartBurst(window.innerWidth / 2, window.innerHeight / 2, 24);
 
-         setTimeout(() => {
+         const startStory = () => {
             overlay.classList.add('fade-out');
-         }, 1800);
+            createHeartBurst(window.innerWidth / 2, window.innerHeight / 2, 18);
+            setTimeout(() => overlay.remove(), 900);
+         };
 
-         setTimeout(() => {
-            overlay.remove();
-         }, 2600);
+         overlay.addEventListener('click', startStory, { once: true });
+         enterBtn?.addEventListener('click', (event) => {
+            event.stopPropagation();
+            startStory();
+         });
+
+         document.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+               startStory();
+            }
+         }, { once: true });
       });
 
       function createHeartBurst(x, y, amount = 8) {
@@ -262,6 +313,66 @@
             button?.classList.remove('active');
          }
       }
+
+      const previewModal = document.getElementById('photo-preview-modal');
+      const previewPhoto = document.getElementById('preview-photo');
+      const previewCaption = document.getElementById('preview-caption');
+      const closePhotoBtn = document.getElementById('close-photo-btn');
+      const prevPhotoBtn = document.getElementById('prev-photo-btn');
+      const nextPhotoBtn = document.getElementById('next-photo-btn');
+      const shuffleGalleryBtn = document.getElementById('shuffle-gallery-btn');
+      const gallery = document.getElementById('gallery-love');
+      const galleryItems = Array.from(document.querySelectorAll('.gallery-photo'));
+      let currentPreviewIndex = 0;
+
+      function openPhotoPreview(imgElement, index = galleryItems.indexOf(imgElement)) {
+         if (!previewModal || !previewPhoto || index < 0) return;
+         currentPreviewIndex = index;
+         const item = galleryItems[index];
+         previewPhoto.src = item.src;
+         previewPhoto.alt = item.alt || 'Foto cinta';
+         previewCaption.textContent = `"${item.alt || 'Momen cinta'}" — istriku, monyetku, buayaku, bidadariku 💖`;
+         previewModal.classList.remove('hidden');
+         previewModal.setAttribute('aria-hidden', 'false');
+         document.body.style.overflow = 'hidden';
+      }
+
+      function closePhotoPreview() {
+         if (!previewModal) return;
+         previewModal.classList.add('hidden');
+         previewModal.setAttribute('aria-hidden', 'true');
+         document.body.style.overflow = '';
+      }
+
+      function showNextPhoto(step = 1) {
+         currentPreviewIndex = (currentPreviewIndex + step + galleryItems.length) % galleryItems.length;
+         openPhotoPreview(galleryItems[currentPreviewIndex], currentPreviewIndex);
+      }
+
+      document.querySelectorAll('.gallery-photo').forEach((item, index) => {
+         item.addEventListener('click', () => openPhotoPreview(item, index));
+         item.addEventListener('mouseenter', (e) => createHeartBurst(e.clientX, e.clientY, 4));
+      });
+
+      prevPhotoBtn?.addEventListener('click', () => showNextPhoto(-1));
+      nextPhotoBtn?.addEventListener('click', () => showNextPhoto(1));
+
+      shuffleGalleryBtn?.addEventListener('click', () => {
+         for (let i = galleryItems.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [galleryItems[i], galleryItems[j]] = [galleryItems[j], galleryItems[i]];
+         }
+         galleryItems.forEach((item) => gallery?.appendChild(item));
+         createHeartBurst(window.innerWidth / 2, window.innerHeight / 2, 12);
+      });
+
+      closePhotoBtn?.addEventListener('click', closePhotoPreview);
+      previewModal?.addEventListener('click', (event) => {
+         if (event.target === previewModal) closePhotoPreview();
+      });
+      document.addEventListener('keydown', (event) => {
+         if (event.key === 'Escape') closePhotoPreview();
+      });
 
       document.querySelectorAll('.gallery-photo, .story-card').forEach((item) => {
          item.addEventListener('mouseenter', (e) => createHeartBurst(e.clientX, e.clientY, 4));
