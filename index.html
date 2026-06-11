@@ -16,7 +16,17 @@
          <h2>Nadra Qaisara</h2>
          <span class="entry-icon">💖</span>
          <p class="entry-hint">hii monyetku</p>
-         <button id="enter-btn" class="enter-btn" type="button">Masuk ke cerita</button>
+         <p class="entry-instruction">Apaa hayooo jawbanya clue bila kita jumpa.</p>
+         <div class="word-game">
+            <div class="word-scramble" id="scrambled-word">6 2 1 0</div>
+            <div class="game-row">
+               <label for="word-input" class="visually-hidden">Jawaban kata</label>
+               <input id="word-input" class="game-input" type="text" placeholder="Tulis jawabanmu..." aria-describedby="entry-feedback">
+               <button id="check-word-btn" class="enter-btn" type="button">Cek Jawaban</button>
+            </div>
+            <div id="entry-feedback" class="entry-feedback" aria-live="polite">Hint: kata ini berkaitan dengan perasaan.</div>
+         </div>
+         <button id="enter-btn" class="enter-btn disabled-btn" type="button" disabled>Masuk setelah jawaban benar</button>
       </div>
    </div>
    <div id="heart-burst" aria-hidden="true"></div>
@@ -259,28 +269,72 @@
       window.addEventListener('load', () => {
          const overlay = document.getElementById('opening-overlay');
          const enterBtn = document.getElementById('enter-btn');
+         const wordInput = document.getElementById('word-input');
+         const checkWordBtn = document.getElementById('check-word-btn');
+         const entryFeedback = document.getElementById('entry-feedback');
+         const scrambledWord = document.getElementById('scrambled-word');
+         const correctWord = '0126';
+         const scrambled = '6 2 1 0';
+
          if (!overlay) return;
 
          overlay.classList.add('show');
          createHeartBurst(window.innerWidth / 2, window.innerHeight / 2, 24);
 
-         const startStory = () => {
+         function setFeedback(message, success = false) {
+            if (!entryFeedback) return;
+            entryFeedback.textContent = message;
+            entryFeedback.className = success ? 'entry-feedback success' : 'entry-feedback';
+         }
+
+         function enableEntrance() {
+            if (!enterBtn) return;
+            enterBtn.disabled = false;
+            enterBtn.classList.remove('disabled-btn');
+            enterBtn.textContent = 'Masuk ke cerita';
+            setFeedback('Benar! Klik tombol untuk masuk ke cerita cinta 💖', true);
+            createHeartBurst(window.innerWidth / 2, window.innerHeight / 2, 18);
+         }
+
+         function startStory() {
             overlay.classList.add('fade-out');
             createHeartBurst(window.innerWidth / 2, window.innerHeight / 2, 18);
             setTimeout(() => overlay.remove(), 900);
-         };
+         }
 
-         overlay.addEventListener('click', startStory, { once: true });
-         enterBtn?.addEventListener('click', (event) => {
-            event.stopPropagation();
-            startStory();
+         function checkAnswer() {
+            if (!wordInput) return;
+            const answer = wordInput.value.trim().toLowerCase();
+            if (!answer) {
+               setFeedback('Isi jawabanmu dulu ya...');
+               return;
+            }
+            if (answer === correctWord) {
+               enableEntrance();
+            } else {
+               setFeedback('Belum tepat, coba lagi ya. Hint: kata ini tentang perasaan kita.');
+               createHeartBurst(window.innerWidth / 2, window.innerHeight / 2, 10);
+            }
+         }
+
+         if (scrambledWord) scrambledWord.textContent = scrambled;
+         enterBtn.disabled = true;
+         enterBtn.classList.add('disabled-btn');
+
+         checkWordBtn?.addEventListener('click', checkAnswer);
+         wordInput?.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+               event.preventDefault();
+               checkAnswer();
+            }
          });
 
-         document.addEventListener('keydown', (event) => {
-            if (event.key === 'Enter' || event.key === ' ') {
+         enterBtn?.addEventListener('click', (event) => {
+            event.stopPropagation();
+            if (!enterBtn.disabled) {
                startStory();
             }
-         }, { once: true });
+         });
       });
 
       function createHeartBurst(x, y, amount = 8) {
